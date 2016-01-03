@@ -26,16 +26,21 @@ Or install it yourself as:
 
     $ gem install maxrmapi
 
+Generate initializer file
+```bash
+$ rails g initializer
+```
+
 ## Usage
 
 * Add your maxrm\_api\_key to your secrets.yml file.
-* Create config/initializers/maxrm_init.rb and set $maxrm\_host to your MAX RM dashboard URL
+* Edit config/initializers/maxrm_init.rb and set $maxrm\_host to your MAX RM dashboard URL.
 
 secrets.yml:
 ```
 development:
   ...
-  maxrm_api_key: themaxrmapigoeshere
+  maxrm_api_key: themaxrmapikeygoeshere
   
 test:
   ...
@@ -44,12 +49,12 @@ production:
   ...
   maxrm_api_key: <%= ENV["MAXRM_API_KEY"] %>
 ```
-config/initializer/maxrm_init.rb:
+config/initializers/maxrm_init.rb:
 ```ruby
 $maxrm_host = "wwweurope1.systemmonitor.eu.com"
 ```
 
-Then you can call the mothids like this:
+Then you can call the methods like this:
 ```ruby
 $xml = Maxrmapi.get_maxrm_xml('list_clients')
 ```

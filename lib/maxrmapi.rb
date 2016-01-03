@@ -2,10 +2,10 @@ require "maxrmapi/version"
 require 'rexml/document'
 
 module Maxrmapi
-  $maxrm_host = "host.goes.here"
-  # initialize $maxrm_host in your rails appliaction in initializers/maxrm_initializer.rb with e.g.
+  # initialize $maxrm_host in your rails appliaction in initializers/maxrm_init.rb with e.g.
   # $maxrm_host = "wwweurope1.systemmonitor.eu.com"
   # or whatever your dasboard resides in
+  $maxrm_host = "host.goes.here"
   
   # returns XML document for particular service e.g.:
   #   get_maxrm_xml('list_clients')
